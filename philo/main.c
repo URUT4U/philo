@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/24 13:49:29 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/24 14:02:50 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	print_info(char **argv);
 
+//each philo is a thread
 int	main(int argc, char **argv)
 {
 	if (argc == 5)
