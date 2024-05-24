@@ -6,12 +6,14 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/24 12:15:57 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/24 13:49:29 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+void	print_info(char **argv);
 
 int	main(int argc, char **argv)
 {
@@ -25,7 +27,7 @@ int	main(int argc, char **argv)
 	if (argc == 6)
 	{
 		print_info(argv);
-		printf("Number of philosophers: %d\n", atoi(argv[5]));
+		printf("Philosophers must eat [%d] times\n", atoi(argv[5]));
 	}
 	return (0);
 }
