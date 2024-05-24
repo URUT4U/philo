@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fork02.c                                           :+:      :+:    :+:   */
+/*   threads02.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 13:25:41 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/24 13:44:08 by nranna           ###   ########.fr       */
+/*   Created: 2024/05/24 14:33:20 by nranna            #+#    #+#             */
+/*   Updated: 2024/05/24 14:55:15 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <pthread.h>
 #include <stdio.h>
-#include <stdlib.h>
 
-int	main(void)
+void	*im_alive(void *arg)
 {
-	int	parent;
+	printf("im alive\n");
+	return (0);
+}
 
-	if ((parent = fork()) == 0)
+int	main(int argc, char **argv)
+{
+	if (argc >= 2)
 	{
-		int	child;
-		if ((child = fork()) == 0)
+		pthread_t	n_thread;
+		int	i = 0;
+
+		while (i <= argc)
 		{
-			usleep(200);
-			printf("im a child!\n");
-			exit(0);
-		}
-		else
-		{
-			usleep(100);
-			printf("im a dad!");
+			pthread_create(&n_thread, NULL, im_alive, NULL);
+			i++;
 		}
 	}
-	else
-		printf("I'm old...");
-	printf("\n");
 	return (0);
 }
