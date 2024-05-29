@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/05/24 14:02:50 by nranna           ###   ########.fr       */
+/*   Updated: 2024/05/28 18:28:48 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ int	main(int argc, char **argv)
 {
 	if (argc == 5)
 	{
+
+		start_simulation(atoi(argv[1]), flag); //TODO: create_philos, forks and table.
+
 		printf("Number of philosophers: %d\n", atoi(argv[1]));
 		printf("Time to die in ms: %d\n", atoi(argv[2]));
 		printf("Time to eat in ms: %d\n", atoi(argv[3]));
