@@ -6,23 +6,23 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/03 16:28:49 by nranna           ###   ########.fr       */
+/*   Updated: 2024/06/03 16:34:25 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ""
+#include "h_philo.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 
 void	print_info(char **argv);
 
-//each philo is a thread
 int	main(int argc, char **argv)
 {
 	if (argc == 5)
 	{
 		print_info(argv);
+		//start_simulation(atoi(argv[1]), flag); //TODO: create_philos, forks and table.
 	}
 	if (argc == 6)
 	{
