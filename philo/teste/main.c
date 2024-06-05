@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/05 13:20:04 by nranna           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:42:52 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	start_simulation(t_table table, char **argv)
 	int	time_to_eat;
 	int	time_to_sleep;
 	int	max_meals;
+	t_table	table;
 
 	philos_amount = atoi(argv[1]);
 	time_to_die = atoi(argv[2]);
@@ -59,7 +60,10 @@ void	start_simulation(t_table table, char **argv)
 	time_to_sleep = atoi(argv[4]);
 	if (argv[5])
 		max_meals = atoi(argv[5]);
-	create_table();
+	create_table(&table, philos_amount);
 }
 
-void	create_table()
+void	create_table(t_table *table, int philos_amount)
+{
+	
+}
