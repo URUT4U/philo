@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/05 17:15:27 by nranna           ###   ########.fr       */
+/*   Updated: 2024/06/05 17:21:52 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,3 @@ void	start_simulation(t_table table, char **argv)
 		max_meals = atoi(argv[5]);
 	create_table();
 }
-
-void	create_table()
