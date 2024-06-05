@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:22:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/05 17:31:19 by nranna           ###   ########.fr       */
+/*   Updated: 2024/06/05 18:05:14 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 static t_philo	*create_philo(int index);
 static t_fork	*create_fork(int index);
 
-t_table	create_table(int philo_amount);
+t_table	create_table(int philo_amount)
 {
 	t_philo	**philos;
 	t_fork	**forks;
 	t_table table;
 	int	i;
 
-	philos = malloc(sizeof(t_philo *) * philos_amount);
-	forks = malloc(sizeof(t_fork *) * philos_amount);
+	philos = malloc(sizeof(t_philo *) * philo_amount);
+	forks = malloc(sizeof(t_fork *) * philo_amount);
 	i = 0;
-	while (i < philos_amount)
+	while (i < philo_amount)
 	{
 		forks[i] = create_fork(i);
 		philos[i] = create_philo(i);
@@ -42,7 +42,7 @@ static t_philo	*create_philo(int index)
 
 	philo = malloc(sizeof(t_philo));
 	if (!philo)
-		return (EXIT_FAILURE)
+		return (NULL);
 	memset(philo, 0, sizeof(t_philo));
 	philo->philo_id = (index + 1);
 	return (philo);
@@ -54,7 +54,7 @@ static t_fork	*create_fork(int index)
 	
 	fork = malloc(sizeof(t_fork));
 	if (!fork)
-		return (EXIT_FAILURE);
+		return (NULL);
 	fork->fork_id = (index + 1);
 	return (fork);
 }
