@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   h_philo.h                                          :+:      :+:    :+:   */
+/*   threads03.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/05 17:15:03 by nranna           ###   ########.fr       */
+/*   Created: 2024/05/24 14:33:20 by nranna            #+#    #+#             */
+/*   Updated: 2024/06/03 15:36:52 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
-#include <stdlib.h>
+#include <stdio.h>
 
-typedef struct s_table
+void	*im_alive(void *arg)
 {
-	
-}	t_table;
+	printf("im alive\n");
+	return (0);
+}
 
-typedef struct s_fork
+int	main(int argc, char **argv)
 {
-	int	fork_id;
-}	t_fork;
+	if (argc >= 2)	
+	{
+		pthread_t	n_thread;
+		int	i = 1;
 
-typedef struct s_philo
-{
-	int	philo_id;
-	int	meals_eaten;
-	t_fork	*left_fork;
-	t_fork	*right_fork;
-}	t_philo;
-
+		while (i < argc)
+		{
+			printf("Thread number: %d\n", i);
+			pthread_create(&n_thread, NULL, im_alive, NULL);
+			sleep(1);
+			i++;
+		}
+	}
+	return (0);
+}
