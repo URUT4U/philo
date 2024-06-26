@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:22:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/10 22:31:59 by nranna           ###   ########.fr       */
+/*   Updated: 2024/06/26 13:42:00 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,21 @@ static t_fork	*create_fork(int index)
 	return (fork);
 }
 
-void	give_forks(t_table *table, t_rules rules)
+void	give_forks(t_table *table, int philo_amount)
 {
 	int	i;
 	
-	(void)rules;
-	i = 0;
-	while (i <= (rules.philo_amount - 1))
+	i = 1;
+	table->philo[0]->left_fork = table->fork[philo_amount - 1];
+	table->philo[0]->right_fork = table->fork[0];
+	while (i <= (philo_amount - 1))
 	{
+		table->philo[i]->left_fork = table->fork[i - 1];
+		table->philo[i]->right_fork = table->fork[i];
 		printf("Hi, my philo ID is: %i\n", table->philo[i]->philo_id);
 		i++;
 	}
+	table->philo[i - 1]->left_fork = table->fork[i - 1];
+	table->philo[i - 1]->right_fork = table->fork[0];
 	return ;
 }
