@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/26 13:41:17 by nranna           ###   ########.fr       */
+/*   Updated: 2024/07/01 12:18:53 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_fork
 typedef struct s_philo
 {
 	int	philo_id;
+	int	thread_id;
 	int	meals_eaten;
 	bool	full;
 	t_fork	*left_fork;
@@ -50,3 +51,4 @@ typedef struct s_table
 /* table utils */
 t_table	create_table(int philo_amount);
 void	give_forks(t_table *table, int philo_amount);
+void	give_threads(t_table *table);
