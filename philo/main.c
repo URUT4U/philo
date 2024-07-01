@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/01 11:28:56 by nranna           ###   ########.fr       */
+/*   Updated: 2024/07/01 16:39:03 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	start_simulation(t_table *table, char **argv)
 		rules.max_meals = atoi(argv[5]);
 	*table = create_table(rules.philo_amount);
 	give_forks(table, rules.philo_amount);
-	give_threads(table);
+	give_threads(table, rules.philo_amount);
 	return ;
 }
