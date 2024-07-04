@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/01 16:38:35 by nranna           ###   ########.fr       */
+/*   Updated: 2024/07/04 20:20:04 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+
+typedef enum	e_opcode
+{
+	LOCK,
+	UNLOCK,
+	INIT,
+	DESTROY,
+	CREATE,
+	JOIN,
+	DETACH,
+}	t_opcode;
 
 //forks are mutexes.
 typedef struct s_rules
@@ -30,6 +41,7 @@ typedef struct s_rules
 typedef struct s_fork
 {
 	int	fork_id;
+	pthread_mutex_t	mutex;
 }	t_fork;
 
 typedef struct s_philo
