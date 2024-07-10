@@ -45,11 +45,3 @@ void *ft_nothing(void *ft)
 		sleep(1);
 	return (NULL);
 }
-
-/*void	*ft_nothing(void *ft)
-{
-	printf("Thread %d: I wont eat nor think... but I'll sleep!\n", data->id);
-	while (1)
-		sleep(1);
-	return (NULL);
-}*/
