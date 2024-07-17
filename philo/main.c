@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/01 16:39:03 by nranna           ###   ########.fr       */
+/*   Updated: 2024/07/17 06:59:26 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 void	print_info(char **argv);
 void	start_simulation(t_table *table, char **argv);
+static int	ft_atoi(const char *str);
 
 int	main(int argc, char **argv)
 {
@@ -26,15 +27,21 @@ int	main(int argc, char **argv)
 	{
 		print_info(argv);
 		start_simulation(&table, argv);
+		//TODO: end_simulation(&table); PHILOS FULL || SOMEONE DIED
 	}
 	else if (argc == 6)
 	{
 		print_info(argv);
 		printf("Philosophers must eat [%d] times\n", atoi(argv[5]));
+		start_simulation(&table, argv);
+		//TODO: end_simulation(&table); PHILOS FULL || SOMEONE DIED
 	}
+	else
+		error_exit("Wrong input.");
 	return (0);
 }
 
+//delete this function in the future
 void	print_info(char **argv)
 {
 	printf("Number of philosophers: %d\n", atoi(argv[1]));
@@ -58,4 +65,12 @@ void	start_simulation(t_table *table, char **argv)
 	give_forks(table, rules.philo_amount);
 	give_threads(table, rules.philo_amount);
 	return ;
+}
+
+static int	ft_atoi(const char *str)
+{
+	long	nbr;
+
+	nbr = 0;
+
 }

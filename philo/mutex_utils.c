@@ -6,10 +6,10 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 20:20:37 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/04 20:55:36 by nranna           ###   ########.fr       */
+/*   Updated: 2024/07/17 06:30:10 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "h_philo.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,10 +27,10 @@ void	mutex_handle(pthread_mutex_t mutex, t_opcode opcode)
 		pthread_mutex_init(mutex, NULL);
 	else if (opcode == DESTROY)
 		pthread_mutex_destroy(mutex);
-	/*else if (opcode == CREATE)
+	else if (opcode == CREATE)
 		pthread_mutex_
 	else if (opcode == JOIN)
-	else if (opcode == DETACH)*/
+	else if (opcode == DETACH)
 	else
 		error_exit("Error: Wrong opcode for mutex handle.\n");
 }
@@ -51,4 +51,4 @@ static void	handle_thread_error(int status, t_opcode opcode)
 		error_exit("Error: No thread found with that ID!\n");
 	else if (EDEADLK == status)
 		error_exit("Error: A deadlock was found...\n");
-}
+}*/

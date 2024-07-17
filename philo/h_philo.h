@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/04 20:20:04 by nranna           ###   ########.fr       */
+/*   Updated: 2024/07/17 06:39:53 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,6 @@ typedef struct s_table
 t_table	create_table(int philo_amount);
 void	give_forks(t_table *table, int philo_amount);
 void	give_threads(t_table *table, int philo_amount);
+
+/* utils */
+void	error_exit(const char *error);
