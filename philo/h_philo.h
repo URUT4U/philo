@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/08/04 04:47:17 by nranna           ###   ########.fr       */
+/*   Updated: 2024/08/04 04:50:02 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_philo
 }	t_philo;
 
 typedef struct s_table
-{
+{//it makes no sense for it to be a **, because there is only [0][0 ... n] TODO: change it later
 	t_philo	**philo;
 	t_fork	**fork;
 	long	start_time;
