@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/08/04 03:07:03 by nranna           ###   ########.fr       */
+/*   Updated: 2024/08/04 03:26:49 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void	start_simulation(t_table *table, char **argv)
 {
 	t_rules	rules;
 
-	rules.philo_amount = atoi(argv[1]);
-	rules.time_to_die = atoi(argv[2]);
-	rules.time_to_eat = atoi(argv[3]);
-	rules.time_to_sleep = atoi(argv[4]);
+	rules.philo_amount = ft_atoi(argv[1]);
+	rules.time_to_die = ft_atoi(argv[2]);
+	rules.time_to_eat = ft_atoi(argv[3]);
+	rules.time_to_sleep = ft_atoi(argv[4]);
 	if (argv[5])
-		rules.max_meals = atoi(argv[5]);
+		rules.max_meals = ft_atoi(argv[5]);
 	*table = create_table(rules.philo_amount);
 	give_forks(table, rules.philo_amount);
 	give_threads(table, rules.philo_amount);
@@ -91,6 +91,6 @@ static int	ft_atoi(const char *str)
 			nbr = (nbr * 10) + (str[i] - '0');
 			i++;
 		}
-		return (nbr * sign);
 	}
+	return (nbr * sign);
 }

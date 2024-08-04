@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/17 06:39:53 by nranna           ###   ########.fr       */
+/*   Updated: 2024/08/04 03:27:24 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdbool.h>
 #include <string.h>
 
+/*
 typedef enum	e_opcode
 {
 	LOCK,
@@ -26,7 +27,7 @@ typedef enum	e_opcode
 	CREATE,
 	JOIN,
 	DETACH,
-}	t_opcode;
+}	t_opcode;*/
 
 //forks are mutexes.
 typedef struct s_rules
