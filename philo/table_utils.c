@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:22:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/06/26 13:42:00 by nranna           ###   ########.fr       */
+/*   Updated: 2024/08/04 03:16:10 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_table	create_table(int philo_amount)
 {
 	t_philo	**philos;
 	t_fork	**forks;
-	t_table table;
-	int	i;
+	t_table	table;
+	int		i;
 
 	philos = malloc(sizeof(t_philo *) * philo_amount);
 	forks = malloc(sizeof(t_fork *) * philo_amount);
@@ -51,7 +51,7 @@ static t_philo	*create_philo(int index)
 static t_fork	*create_fork(int index)
 {
 	t_fork	*fork;
-	
+
 	fork = malloc(sizeof(t_fork));
 	if (!fork)
 		return (NULL);
@@ -62,7 +62,7 @@ static t_fork	*create_fork(int index)
 void	give_forks(t_table *table, int philo_amount)
 {
 	int	i;
-	
+
 	i = 1;
 	table->philo[0]->left_fork = table->fork[philo_amount - 1];
 	table->philo[0]->right_fork = table->fork[0];

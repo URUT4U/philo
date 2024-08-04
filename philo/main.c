@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/07/17 06:59:26 by nranna           ###   ########.fr       */
+/*   Updated: 2024/08/04 03:07:03 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-void	print_info(char **argv);
-void	start_simulation(t_table *table, char **argv);
+void		print_info(char **argv);
+void		start_simulation(t_table *table, char **argv);
 static int	ft_atoi(const char *str);
 
 int	main(int argc, char **argv)
@@ -70,7 +70,27 @@ void	start_simulation(t_table *table, char **argv)
 static int	ft_atoi(const char *str)
 {
 	long	nbr;
+	int		sign;
+	int		i;
 
 	nbr = 0;
-
+	sign = 1;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
+			i++;
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (str[i] == '-')
+				sign = sign * -1;
+			i++;
+		}
+		while (str[i] >= '0' && str[i] <= '9')
+		{
+			nbr = (nbr * 10) + (str[i] - '0');
+			i++;
+		}
+		return (nbr * sign);
+	}
 }
