@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/08/04 03:27:24 by nranna           ###   ########.fr       */
+/*   Updated: 2024/08/04 04:47:17 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ typedef struct s_table
 {
 	t_philo	**philo;
 	t_fork	**fork;
+	long	start_time;
+	bool	end_simulation;
 }	t_table;
 
 /* table utils */
