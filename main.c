@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/08/04 03:26:49 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/11 18:03:30 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	main(int argc, char **argv)
 
 	if (argc == 5)
 	{
-		print_info(argv);
+		//print_info(argv);
 		start_simulation(&table, argv);
 		//TODO: end_simulation(&table); PHILOS FULL || SOMEONE DIED
 	}
 	else if (argc == 6)
 	{
-		print_info(argv);
+		//print_info(argv);
 		printf("Philosophers must eat [%d] times\n", atoi(argv[5]));
 		start_simulation(&table, argv);
 		//TODO: end_simulation(&table); PHILOS FULL || SOMEONE DIED
@@ -61,7 +61,7 @@ void	start_simulation(t_table *table, char **argv)
 	rules.time_to_sleep = ft_atoi(argv[4]);
 	if (argv[5])
 		rules.max_meals = ft_atoi(argv[5]);
-	*table = create_table(rules.philo_amount);
+	*table = create_table(rules);
 	give_forks(table, rules.philo_amount);
 	give_threads(table, rules.philo_amount);
 	return ;

@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:22:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/08/04 03:16:10 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/11 17:55:33 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 static t_philo	*create_philo(int index);
 static t_fork	*create_fork(int index);
 
-t_table	create_table(int philo_amount)
+t_table	create_table(t_rules rules)
 {
 	t_philo	**philos;
 	t_fork	**forks;
 	t_table	table;
 	int		i;
 
-	philos = malloc(sizeof(t_philo *) * philo_amount);
-	forks = malloc(sizeof(t_fork *) * philo_amount);
+	philos = malloc(sizeof(t_philo *) * rules.philo_amount);
+	forks = malloc(sizeof(t_fork *) * rules.philo_amount);
 	i = 0;
-	while (i < philo_amount)
+	while (i < rules.philo_amount)
 	{
 		forks[i] = create_fork(i);
 		philos[i] = create_philo(i);
+		philos[i]->table = &table;
 		i++;
 	}
 	table.philo = philos;
 	table.fork = forks;
+	table.rules = &rules;
 	return (table);
 }
 
@@ -56,6 +58,7 @@ static t_fork	*create_fork(int index)
 	if (!fork)
 		return (NULL);
 	fork->fork_id = (index + 1);
+	pthread_mutex_init(&fork->mutex, NULL);
 	return (fork);
 }
 
