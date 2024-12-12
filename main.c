@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/11 18:03:30 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/11 19:55:35 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_atoi(const char *str);
 int	main(int argc, char **argv)
 {
 	t_table	table;
-
+	
 	if (argc == 5)
 	{
 		//print_info(argv);
@@ -62,6 +62,7 @@ void	start_simulation(t_table *table, char **argv)
 	if (argv[5])
 		rules.max_meals = ft_atoi(argv[5]);
 	*table = create_table(rules);
+	table->rules = &rules;
 	give_forks(table, rules.philo_amount);
 	give_threads(table, rules.philo_amount);
 	return ;

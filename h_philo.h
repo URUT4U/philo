@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/11 17:53:17 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/11 19:48:32 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
+
+typedef struct s_table t_table;
 
 /*
 typedef enum	e_opcode
@@ -47,7 +50,7 @@ typedef struct s_fork
 
 typedef struct s_philo
 {
-	struct s_table		*table;
+	t_table		*table;
 	pthread_t	thread_id;
 	int			philo_id;
 	int			meals_eaten;

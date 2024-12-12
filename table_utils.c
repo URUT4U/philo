@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:22:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/11 17:55:33 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/11 19:23:00 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_table	create_table(t_rules rules)
 	}
 	table.philo = philos;
 	table.fork = forks;
-	table.rules = &rules;
 	return (table);
 }
 
