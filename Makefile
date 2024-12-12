@@ -6,7 +6,7 @@
 #    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:06:45 by nranna            #+#    #+#              #
-#    Updated: 2024/08/04 03:29:48 by nranna           ###   ########.fr        #
+#    Updated: 2024/12/12 19:29:35 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ GREEN = \033[1;32m
 WHITE = \033[1;37m
 
 # PROGRAM FILES CHANGE SRC LATER
-SRC = main.c thread_utils.c mutex_utils.c table_utils.c utils.c
+SRC = main.c thread_utils.c mutex_utils.c table_utils.c utils.c time.c
 INCLUDE = h_philo.h
 
 OBJ = $(SRC:.c=.o)

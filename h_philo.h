@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   h_philo.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
+/*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/11 19:48:32 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/12 19:29:12 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,3 +75,4 @@ void	give_threads(t_table *table, int philo_amount);
 
 /* utils */
 void	error_exit(const char *error);
+int 	ft_time(void);

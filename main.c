@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
+/*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/11 19:55:35 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/12 20:50:46 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ static int	ft_atoi(const char *str);
 int	main(int argc, char **argv)
 {
 	t_table	table;
-	
+
+	table.start_time = ft_time();
+	printf("table start: %ld\n", table.start_time);
 	if (argc == 5)
 	{
 		//print_info(argv);
@@ -65,6 +67,7 @@ void	start_simulation(t_table *table, char **argv)
 	table->rules = &rules;
 	give_forks(table, rules.philo_amount);
 	give_threads(table, rules.philo_amount);
+	table->end_simulation = false;
 	return ;
 }
 
