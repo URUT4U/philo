@@ -6,13 +6,13 @@
 /*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:05:22 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/13 22:30:49 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/14 13:00:30 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "h_philo.h"
 
-void unlock_forks(t_table *table)
+void unlock_all_forks(t_table *table)
 {
     int i;
 
@@ -52,7 +52,7 @@ void waiter(t_table *table)
             }
             i++;
         }
-        usleep(1000);
+        smart_sleep(1000, table);
     }
     return;
 }

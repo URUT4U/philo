@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/13 19:13:53 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/14 11:49:13 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	main(int argc, char **argv)
 	table.start_time = table.tv.tv_usec / 1000 + table.tv.tv_sec * 1000;
 	if (argc == 5)
 	{
-		//print_info(argv);
+		//check_input(argv);
 		start_simulation(&table, argv);
 		//TODO: end_simulation(&table); PHILOS FULL || SOMEONE DIED
 	}
 	else if (argc == 6)
 	{
-		//print_info(argv);
+		//check_input(argv);
 		printf("Philosophers must eat [%d] times\n", atoi(argv[5]));
 		start_simulation(&table, argv);
 		//TODO: end_simulation(&table); PHILOS FULL || SOMEONE DIED
