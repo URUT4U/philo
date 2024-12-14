@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 14:12:23 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/14 12:58:36 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/14 16:50:37 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ typedef struct s_philo
 	int			philo_id;
 	int			meals_eaten;
 	bool		full;
+	bool		left_lock;
+	bool		right_lock;
 	t_fork		*left_fork;
 	t_fork		*right_fork;
 }	t_philo;
@@ -82,6 +84,8 @@ long int ft_time(void);
 long int	ft_logtime(long int start_time);
 void    waiter(t_table *table);
 void    smart_sleep(long int ms, t_table *table);
-void unlock_all_forks(t_table *table);
+void	unlock_forks2(t_philo *philo);
+
+
 
 void	*routine(void *phil);
