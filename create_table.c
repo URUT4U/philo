@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   table_utils.c                                      :+:      :+:    :+:   */
+/*   create_table.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
+/*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:22:15 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/11 19:23:00 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/13 21:01:36 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 static t_philo	*create_philo(int index);
 static t_fork	*create_fork(int index);
 
-t_table	create_table(t_rules rules)
+t_table	create_table(t_table *table, t_rules rules)
 {
 	t_philo	**philos;
 	t_fork	**forks;
-	t_table	table;
 	int		i;
-
+	
 	philos = malloc(sizeof(t_philo *) * rules.philo_amount);
 	forks = malloc(sizeof(t_fork *) * rules.philo_amount);
 	i = 0;
@@ -29,12 +28,12 @@ t_table	create_table(t_rules rules)
 	{
 		forks[i] = create_fork(i);
 		philos[i] = create_philo(i);
-		philos[i]->table = &table;
+		philos[i]->table = table;
 		i++;
 	}
-	table.philo = philos;
-	table.fork = forks;
-	return (table);
+	table->philo = philos;
+	table->fork = forks;
+	return (*table);
 }
 
 static t_philo	*create_philo(int index)
@@ -46,6 +45,7 @@ static t_philo	*create_philo(int index)
 		return (NULL);
 	memset(philo, 0, sizeof(t_philo));
 	philo->philo_id = (index + 1);
+	philo->last_eat = 0;
 	return (philo);
 }
 

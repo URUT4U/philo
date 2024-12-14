@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:50 by nranna            #+#    #+#             */
-/*   Updated: 2024/12/12 20:50:46 by nranna           ###   ########.fr       */
+/*   Updated: 2024/12/13 19:13:53 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(int argc, char **argv)
 {
 	t_table	table;
 
-	table.start_time = ft_time();
-	printf("table start: %ld\n", table.start_time);
+	gettimeofday(&table.tv, NULL);
+	table.start_time = table.tv.tv_usec / 1000 + table.tv.tv_sec * 1000;
 	if (argc == 5)
 	{
 		//print_info(argv);
@@ -46,10 +46,10 @@ int	main(int argc, char **argv)
 //delete this function in the future
 void	print_info(char **argv)
 {
-	printf("Number of philosophers: %d\n", atoi(argv[1]));
-	printf("Time to die in ms: %d\n", atoi(argv[2]));
-	printf("Time to eat in ms: %d\n", atoi(argv[3]));
-	printf("Time to sleep in ms: %d\n", atoi(argv[4]));
+	printf("Number of philosophers: %ld\n", atol(argv[1]));
+	printf("Time to die in ms: %ld\n", atol(argv[2]));
+	printf("Time to eat in ms: %ld\n", atol(argv[3]));
+	printf("Time to sleep in ms: %ld\n", atol(argv[4]));
 	return ;
 }
 
@@ -63,7 +63,9 @@ void	start_simulation(t_table *table, char **argv)
 	rules.time_to_sleep = ft_atoi(argv[4]);
 	if (argv[5])
 		rules.max_meals = ft_atoi(argv[5]);
-	*table = create_table(rules);
+	else
+		rules.max_meals = -42;
+	create_table(table, rules);
 	table->rules = &rules;
 	give_forks(table, rules.philo_amount);
 	give_threads(table, rules.philo_amount);

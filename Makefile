@@ -3,21 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
+#    By: nranna <nranna@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:06:45 by nranna            #+#    #+#              #
-#    Updated: 2024/12/12 19:29:35 by nranna           ###   ########.fr        #
+#    Updated: 2024/12/13 19:23:58 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CCFLAGS = -Wall -Wextra -Werror -pthread
+CCFLAGS = -Wall -Wextra -Werror -pthread -g
 NAME = executable
 GREEN = \033[1;32m
 WHITE = \033[1;37m
 
 # PROGRAM FILES CHANGE SRC LATER
-SRC = main.c thread_utils.c mutex_utils.c table_utils.c utils.c time.c
+SRC = main.c thread.c mutex_utils.c create_table.c utils.c time.c routines.c waiter.c
 INCLUDE = h_philo.h
 
 OBJ = $(SRC:.c=.o)
